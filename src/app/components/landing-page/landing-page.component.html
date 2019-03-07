@@ -1,0 +1,38 @@
+<div class="bbr_mapContainer">
+	<div class="bbr_showMap">
+		<agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">  
+			<agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true" (dragEnd)="draggableEnd($event)" *ngIf="!isSearch"></agm-marker>
+			<agm-direction [origin]="maidLocation" [destination]="bookingLocation" *ngIf="isSearch"></agm-direction>
+		</agm-map>
+	</div>
+	<div class="bbr_mapOverlay">
+		<div class="bbr_wrapper">
+			Finding at <strong>{{locationName}}</strong> for
+		</div>
+		<ng-container *ngIf="!isSearch">
+			<div class="bbr_wrapper"> 
+				<ul class="bbr_listing">
+					<li class="bbr_list-indx" [ngClass]="{'bbr_active':service.isActive}" (click)="activeService(i,$event)" *ngFor="let service of listServices; let i=index;">
+						<img class="" [src]="service.img" *ngIf="service.img && service.img!==''">
+						<label for="labelName">{{service.label}}</label>
+						<label for="label-pricing">{{service.price}}/hr</label>
+					</li>
+				</ul>
+				<div class="searchButton">
+					<button class="bbr_searchBtn" *ngIf="locationName!='' && activeServices && activeServices.isActive" (click)="activeSearch()">Book Maid</button>
+				</div>
+			</div>
+		</ng-container>
+<ng-container *ngIf="isSearch && !bookingFailed">
+	<div class="bbr_mapOverlay">
+		<app-maid-information [maidName]="maidName" [maidAge]="maidAge" [maidMobile]="maidMobile" [maidRating]="maidRating" [bookingId]="bookingId" [bookingLocation]="bookingLocation" [maidLocation]="maidLocation"></app-maid-information>
+	</div> 
+</ng-container>	
+	<ng-container *ngIf="isSearch && bookingFailed">
+<div class="bbr_mapOverlay">
+		
+		<strong>Helpers not available in your area.</strong><button class="btn btn-primary" (click)="pageRefresh()" style="float:right;">Search Again</button>
+</div>
+		</ng-container>
+	</div>
+</div> 

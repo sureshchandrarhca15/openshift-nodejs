@@ -1,0 +1,10 @@
+	<div class="baiber_userImg">
+		<img class="bbr_defltPik" [src]="userImgPath">
+		<div class="bbr_userName" [innerHTML]="showUserName()">
+		</div>
+	</div>
+	<ul class="bbr_furtherLinks">
+		<li class="bbr_nodes" *ngFor="let node of nodeLinks" (click)="loadRightPane(node)" [ngClass]="{'ups-active':node.isActive}">
+			{{node.label}}
+		</li>	
+	</ul>

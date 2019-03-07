@@ -1,0 +1,30 @@
+
+ .baiber_userImg{
+    width: 150px;
+    margin: 0 auto 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+ .baiber_userImg img.bbr_defltPik {
+  border-radius: 80px;
+  border: 1px solid #34495e;
+  margin: 10px 0;
+}
+ .bbr_furtherLinks {
+    padding: 0 10px;
+    list-style: none;
+}
+
+ .bbr_furtherLinks li.bbr_nodes {
+  padding: 10px 10px 10px 0;
+  cursor: pointer;
+}
+
+li.bbr_nodes.ups-active {
+  padding: 10px !important;
+  text-align: center;
+  background: #208eea;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: bold;
+}

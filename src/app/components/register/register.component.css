@@ -1,0 +1,12 @@
+.generic-layout.bbr_regiter {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+} 
+.form-group:not(.bbr_fullWdth) {
+  display: inline-block;
+  vertical-align: top;
+  width: 30%;
+  margin-right: 2%;
+  margin-bottom: 30px;
+}

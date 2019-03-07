@@ -1,0 +1,152 @@
+﻿<div class="generic-layout bbr_regiter
+">
+    <h4>Register</h4>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <!-- Default unchecked -->
+        <div class="form-group bbr_fullWdth" >
+                
+                      <div class="custom-control custom-radio custom-control-inline">
+                            <input class="custom-control-input" id="defaultInline1" type="radio" name="service_provider" [value]="false" [checked]="!service_provider" value="service_provider" formControlName="service_provider">
+                <label for="defaultInline1" class="custom-control-label">
+                        
+                        User
+                      </label> </div>
+                      <div class="custom-control custom-radio custom-control-inline">
+                            <input class="custom-control-input" id="defaultInline2" type="radio" name="service_provider" [value]="true" [checked]="service_provider" value="Helper" formControlName="service_provider">
+                            <label for="defaultInline2" class="custom-control-label">
+                              
+                                Helper
+                            </label>  </div>
+                          
+                      
+                      
+        </div>
+    <div class="form-group">
+        <label for="first_name">First Name*</label>
+        <input type="text" formControlName="first_name" placeholder="Enter First Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }" />
+        <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+            <div *ngIf="f.first_name.errors.required">First Name is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="last_name">Last Name*</label>
+        <input type="text" formControlName="last_name"  placeholder="Enter Last Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }" />
+        <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
+            <div *ngIf="f.last_name.errors.required">Last Name is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="aadhaar_number">Aadhaar number*</label>
+        <input type="text" placeholder="Enter Aadhaar number" minlength="12" formControlName="aadhaar_number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.aadhaar_number.errors }" />
+        <!-- <div *ngIf="submitted && f.aadhaar_number.errors" class="invalid-feedback">
+            <div *ngIf="f.aadhaar_number.errors.required">Aadhaar number is required</div>
+        </div> -->
+        <!-- <div  *ngIf="f.aadhaar_number.errors && f.aadhaar_number.errors.pattern" class="invalid-feedback">
+            Aadhaar is invalid
+        </div> -->
+        <!-- <div *ngIf="f.aadhaar_number.errors.minlength" class="invalid-feedback">
+            Aadhaar must be 12 characters long.
+          </div> -->
+    </div>
+    <div class="form-group">
+        <label for="mobile">Mobile Number*</label>
+        <input type="text" formControlName="mobile" pattern="^(0|[1-9][0-9]*)$" class="form-control" minlength="10"  placeholder="Enter Mobile Number" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" />        
+        <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+            <div *ngIf="f.mobile.errors.required">Mobile Number is required</div>
+        </div>
+        <div  *ngIf="f.mobile.errors && f.mobile.errors.pattern" class="invalid-feedback">
+            Mobile Number is invalid
+        </div>
+        <!-- <div *ngIf="f.mobile.errors?.minlength" class="invalid-feedback">
+            Mobile Number must be 10 characters long.
+          </div> -->
+    </div>
+    <div class="form-group">
+        <label for="email">Email id</label>
+        <input type="text" formControlName="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" class="form-control" placeholder="Enter Email id" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />        
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">Email id is required</div>
+        </div>
+        <div  *ngIf="f.email.errors && f.email.errors.pattern" class="invalid-feedback">
+            Email is invalid
+        </div>
+    </div>
+        
+    <div class="form-group">
+        <label for="street">Street*</label>
+        <input type="street" formControlName="street" placeholder="Enter street" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.street.errors }" />
+        <div *ngIf="submitted && f.street.errors" class="invalid-feedback">
+            <div *ngIf="f.street.errors.required">street is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="city">City*</label>
+        <input type="city" formControlName="city" placeholder="Enter city" class="form-control" [ngClass]="{    'is-invalid': submitted && f.city.errors }" />
+        <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+            <div *ngIf="f.city.errors.required">city is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="state">State*</label>
+        <input type="state" formControlName="state" placeholder="Enter state" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.state.errors }" />
+        <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+            <div *ngIf="f.state.errors.required">state is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="country">Country*</label>
+        <input type="country" formControlName="country" placeholder="Enter country" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.country.errors }" />
+        <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+            <div *ngIf="f.country.errors.required">country is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="zipcode">Zipcode*</label>
+        <input type="zipcode" formControlName="zipcode" placeholder="Enter zipcode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.zipcode.errors }" />
+        <div *ngIf="submitted && f.zipcode.errors" class="invalid-feedback">
+            <div *ngIf="f.zipcode.errors.required">zipcode is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password*</label>
+        <input type="password" formControlName="password" placeholder="Enter Password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <!-- <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+        </div> -->
+    </div>
+        
+<div *ngIf="f.service_provider.value" class="form-group">
+    <label for="applicable_services">Services offered</label>
+        <ng-multiselect-dropdown
+        [placeholder]="'Services offered'"
+        [data]="ServicesList"
+        [(ngModel)]="applicable_services"
+        formControlName="applicable_services"
+        [settings]="ServicesListSettings"
+        (onSelect)="onItemSelect($event)"
+        (onSelectAll)="onSelectAll($event)">
+    </ng-multiselect-dropdown>
+    </div>
+<div *ngIf="f.service_provider.value" class="form-group">
+    <label for="applicable_areas">Service Location</label>
+        <ng-multiselect-dropdown
+                [placeholder]="'Service Location'"
+                [data]="ServicesLoc"
+                [(ngModel)]="applicable_areas"
+formControlName="applicable_areas"
+                [settings]="ServicesLocSettings"
+                (onSelect)="onItemSelect($event)"
+                (onSelectAll)="onSelectAll($event)">
+            </ng-multiselect-dropdown>
+    </div>
+    <div class="form-group bbr_fullWdth">
+        <button [disabled]="loading" class="btn btn-primary">Register</button>
+        <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+        <a routerLink="/login" class="btn btn-link">Cancel</a>
+    </div>
+</form>
+</div>
+
+
+        

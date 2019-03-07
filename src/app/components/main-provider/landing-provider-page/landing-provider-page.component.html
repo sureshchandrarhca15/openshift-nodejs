@@ -1,0 +1,13 @@
+<div class="bbr_mapContainer">
+	<div class="bbr_showMap">
+		<agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">  
+			<agm-direction [origin]="searchLocation" [destination]="ownLocation"></agm-direction>
+		</agm-map>
+	</div>
+	<div class="bbr_mapOverlay">
+
+		<div class="bbr_mapOverlay">
+			<app-maid-information></app-maid-information>
+		</div>
+	</div>
+</div> 

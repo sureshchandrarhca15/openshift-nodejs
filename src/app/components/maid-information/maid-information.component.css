@@ -1,0 +1,41 @@
+.bbr_wrapper>* {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.bbr_infocont {
+  width: 60%;
+  margin-left: 30px;
+}
+
+.bbr_infocont h2 {
+    margin: 15px 0;
+    font-size: 1.5em;
+}
+
+.bbr_info {
+  display: inline-block;
+  width: 100%;
+}
+.bbr_info>* {
+     display: inline-block;
+     vertical-align: top;
+     margin-right: 50px;
+     min-width: 110px;
+}
+.bbr_btns {
+  display: inline-block;
+}
+.bbr_rating{
+  background: url('/assets/images/rating.png') no-repeat 25px;
+}
+.bbr_phone{
+  background: url('/assets/images/phone.png') no-repeat right;
+}
+.btn.btn-default{
+      background: url(/assets/images/error.png) no-repeat 75px 10px;
+      width: 100px;
+      border: 1px solid #aaa;
+      padding: 5px;
+      box-sizing: border-box;
+}

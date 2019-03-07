@@ -1,0 +1,18 @@
+.baiber_container {
+  width: 960px;
+  margin: 0 auto;
+  background: #e1e1e1;
+}
+.bbr_mapContainer {
+  width: 768px;
+  display: inline-block;
+  vertical-align: top;
+    box-sizing: border-box;
+}
+.baiber_paneInfo {
+  padding: 10px 20px;
+  width: 192px;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+}

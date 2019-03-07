@@ -1,0 +1,12 @@
+.bbr_imgCont>* {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.bbr_imgCont h1 {
+  margin-left: 20px;
+}
+
+.bbr_header-wrap {
+  padding: 20px 0;
+}
